@@ -31,3 +31,22 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach(section => observer.observe(section));
+
+document.querySelectorAll(".team-header").forEach(header => {
+    header.addEventListener("click", () => {
+        const card = header.closest(".team-card");
+        const isOpen = card.classList.toggle("active");
+
+        header.setAttribute("aria-expanded", isOpen);
+    });
+});
+
+document.querySelectorAll(".team-card").forEach(card => {
+    if (!card.classList.contains("active")) {
+        const body = card.querySelector(".team-body");
+
+        if (body) {
+            body.hidden = true;
+        }
+    }
+});
