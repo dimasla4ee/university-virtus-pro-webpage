@@ -41,15 +41,12 @@
     height: 70%;
     object-fit: contain;
     transform: translateX(var(--xPos)) scale(var(--scale));
-    /* ДОБАВЛЕНО: filter в transition для плавного затемнения */
     transition: transform 0.2s ease, filter 0.3s ease; 
     z-index: 1;
 }
 
-/* Если внутри контейнера наведен курсор НА ЛЮБОГО игрока, 
-   то все игроки, на которых курсор НЕ НАВЕДЕН, затемняются */
 .roster_container:has(.roster_player:hover) .roster_player:not(:hover) {
-    filter: brightness(0.7); /* 0.4 - степень затемнения. 0 - полностью черный, 1 - без изменений */
+    filter: brightness(0.7);
 }
 
 .roster_container:hover .roster_player {
