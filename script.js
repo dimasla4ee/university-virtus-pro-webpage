@@ -1,3 +1,6 @@
+/**
+ *
+ */
 function scrollToPlayer(id) {
     document.getElementById(id).scrollIntoView({
         behavior: 'smooth'
@@ -49,4 +52,24 @@ document.querySelectorAll(".team-card").forEach(card => {
             body.hidden = true;
         }
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.expandable').forEach(expandable => {
+        const trigger = expandable.querySelector('.expandable__trigger');
+        const actionText = expandable.querySelector('.expandable__action span:first-child');
+
+        const setOpen = (isOpen) => {
+            expandable.classList.toggle('expandable--closed', !isOpen);
+            trigger.setAttribute('aria-expanded', String(isOpen));
+            actionText.textContent = isOpen ? 'Скрыть' : 'Показать';
+        };
+
+        setOpen(false);
+
+        trigger.addEventListener('click', () => {
+            const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+            setOpen(!isOpen);
+        });
+    });
 });
