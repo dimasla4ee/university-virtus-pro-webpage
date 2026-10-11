@@ -1,3 +1,8 @@
+<!--
+    TODO: При открытии страницы мигает фон
+-->
+
+
 <!DOCTYPE html>
 <html lang="ru-RU">
 
@@ -35,17 +40,17 @@
 </div>
 <section id="roster">
     <div class="roster_container">
-        <img src="images/roster/Nayqo.webp" class="roster_player nayqo" onclick="scrollToPlayer('nayqo')"
+        <img src="images/roster/Nayqo.webp" class="roster_player nayqo" onclick="scrollToElement('nayqo')"
              alt="Nayqo portrait">
-        <img src="images/roster/SkyZs.webp" class="roster_player skyzs" onclick="scrollToPlayer('skyzs')"
+        <img src="images/roster/SkyZs.webp" class="roster_player skyzs" onclick="scrollToElement('skyzs')"
              alt="Skyzs portrait">
-        <img src="images/roster/Dark.webp" class="roster_player dark" onclick="scrollToPlayer('dark')"
+        <img src="images/roster/Dark.webp" class="roster_player dark" onclick="scrollToElement('dark')"
              alt="Dark portrait">
-        <img src="images/roster/p4sh4.webp" class="roster_player pasha" onclick="scrollToPlayer('pasha')"
+        <img src="images/roster/p4sh4.webp" class="roster_player pasha" onclick="scrollToElement('pasha')"
              alt="Pasha portrait">
-        <img src="images/roster/RORICK.webp" class="roster_player rorick" onclick="scrollToPlayer('rorick')"
+        <img src="images/roster/RORICK.webp" class="roster_player rorick" onclick="scrollToElement('rorick')"
              alt="Rorick portrait">
-        <img src="images/roster/dan-_-.webp" class="roster_player dan" onclick="scrollToPlayer('dan')"
+        <img src="images/roster/dan-_-.webp" class="roster_player dan" onclick="scrollToElement('dan')"
              alt="Dan portrait">
     </div>
 </section>
@@ -85,72 +90,127 @@
 
             <!-- EMBED HIGHLIGHT -->
 
-            <div class="player-card__details">
-                <section class="expandable">
-                    <button class="expandable__trigger" type="button">
-                        <span class="expandable__title">Команды</span>
-                        <span class="expandable__action">
-                            <span>Скрыть</span>
-                            <span class="expandable__icon">⌃</span>
-                        </span>
-                    </button>
+            <details class="expandable-card">
+                <summary>
+                    <span class="summary-text">История команд</span>
+                    <span class="chevron">
+                        <img src="images/icons/arrow_down_24dp.svg" alt="">
+                    </span>
+                </summary>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
+                <div class="body">
+                    <div class="body-inner">
+                        <div class="body-content">
                             <div class="team-history">
                                 <span class="team-history__name">Team Valor</span>
                                 <span class="team-history__years">01/2023 – 03/2024</span>
-                                <!--
-                                    1st C-Tier Hexagone Six 2024
-                                    1st B-Tier R6 South Breach 2024
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">ENCE</span>
                                 <span class="team-history__years">03/2024 – 03/2025</span>
-                                <!--
-                                    1st B-Tier Malta Cyber Series: VIII
-                                    7th A-Tier Europe League 2024 - Stage 1
-                                    8th A-Tier Europe League 2024 - Stage 2
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Gen.G Esports</span>
                                 <span class="team-history__years">04/2025 – 01/2026</span>
-                                <!--
-                                    5th A-Tier Europe MENA League 2025 - Stage 1
-                                    7th S-Tier Esports World Cup 2025
-                                    13th-16th A-Tier Europe MENA League 2025 - Stage 2
-                                    5th A-Tier Europe MENA League 2025 - Regional Finals
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Virtus.pro</span>
                                 <span class="team-history__years">03/2026 – н.в.</span>
                                 <span class="team-history__role">IGL</span>
-                                <!--
-                                    2nd A-Tier Europe MENA League 2026 - Kickoff
-                                -->
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </details>
+
+            <details class="expandable-card">
+                <summary>
+                    <span class="summary-text">Достижения</span>
+                    <span class="chevron">
+                        <img src="images/icons/arrow_down_24dp.svg" alt="">
+                    </span>
+                </summary>
+
+                <div class="body">
+                    <div class="body-inner">
+                        <div class="body-content">
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">Hexagone Six 2024</span>
+                                    <span class="event-history__tier">C-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">R6 South Breach 2024</span>
+                                    <span class="event-history__tier">B-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">Malta Cyber Series: VIII</span>
+                                    <span class="event-history__tier">B-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">7th</span>
+                                    <span class="event-history__name">Europe League 2024 - Stage 1</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">8th</span>
+                                    <span class="event-history__name">Europe League 2024 - Stage 2</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">5th</span>
+                                    <span class="event-history__name">Europe MENA League 2025 - Stage 1</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">7th</span>
+                                    <span class="event-history__name">Esports World Cup 2025</span>
+                                    <span class="event-history__tier">S-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">13th-16th</span>
+                                    <span class="event-history__name">Europe MENA League 2025 - Stage 2</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">5th</span>
+                                    <span class="event-history__name">Europe MENA League 2025 - Regional Finals</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">2nd</span>
+                                    <span class="event-history__name">Europe MENA League 2026 - Kickoff</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
 
             <div class="player-card__footer">
                 <a href="https://liquipedia.net/rainbowsix/Nayqo" class="social-link" aria-label="Liquipedia"
@@ -159,17 +219,20 @@
                           aria-hidden="true"></span>
                 </a>
 
-                <a href="https://x.com/Nayqo7k" class="social-link" aria-label="X" target="_blank">
+                <a href="https://x.com/Nayqo7k" class="social-link" aria-label="X"
+                   target="_blank">
                     <span class="social-icon" style="--icon: url('/images/links/logo-x.svg');"
                           aria-hidden="true"></span>
                 </a>
 
-                <a href="https://www.twitch.tv/nayqo7k" class="social-link" aria-label="Twitch" target="_blank">
+                <a href="https://www.twitch.tv/nayqo7k" class="social-link" aria-label="Twitch"
+                   target="_blank">
                     <span class="social-icon" style="--icon: url('/images/links/logo-twitch.svg');"
                           aria-hidden="true"></span>
                 </a>
 
-                <a href="https://siege.gg/players/3397" class="social-link" aria-label="SiegeGG" target="_blank">
+                <a href="https://siege.gg/players/3397" class="social-link" aria-label="SiegeGG"
+                   target="_blank">
                     <span class="social-icon" style="--icon: url('/images/links/logo-siege-gg.svg');"
                           aria-hidden="true"></span>
                 </a>
@@ -195,9 +258,9 @@
                 <div class="player-card__meta">
                     <span>25 лет</span>
                     <span class="country">
-                            <span>🇫🇷</span>
-                            Франция
-                        </span>
+                        <span>🇫🇷</span>
+                        Франция
+                    </span>
                 </div>
             </div>
 
@@ -212,107 +275,155 @@
 
             <!-- EMBED HIGHLIGHT -->
 
-            <div class="player-card__details">
-                <section class="expandable">
-                    <button class="expandable__trigger" type="button">
-                        <span class="expandable__title">Команды</span>
-                        <span class="expandable__action">
-                                <span>Скрыть</span>
-                                <span class="expandable__icon">⌃</span>
-                            </span>
-                    </button>
+            <details class="expandable-card">
+                <summary>
+                    <span class="summary-text">История команд</span>
+                    <span class="chevron">
+                        <img src="images/icons/arrow_down_24dp.svg" alt="">
+                    </span>
+                </summary>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
+                <div class="body">
+                    <div class="body-inner">
+                        <div class="body-content">
                             <div class="team-history">
                                 <span class="team-history__name">OkaCorp</span>
                                 <span class="team-history__years">06/2022 – 10/2022</span>
-
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Team Valor</span>
                                 <span class="team-history__years">01/2023 – 03/2024</span>
-
-                                <!--
-                                    1st C-Tier Hexagone Six 2024
-                                    1st B-Tier R6 South Breach 2024
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">ENCE</span>
                                 <span class="team-history__years">03/2024 – 03/2025</span>
-
-                                <!--
-                                    1st B-Tier Malta Cyber Series: VIII
-                                    7th A-Tier Europe League 2024 - Stage 1
-                                    8th A-Tier Europe League 2024 - Stage 2
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Gen.G Esports</span>
                                 <span class="team-history__years">04/2025 – 01/2026</span>
-
-                                <!--
-                                    5th A-Tier Europe MENA League 2025 - Stage 1
-                                    13th-16th S-Tier Esports World Cup 2025
-                                    5th A-Tier Europe MENA League 2025 - Stage 2
-                                    5th A-Tier Europe MENA League 2025 - Regional Finals
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Virtus.pro</span>
                                 <span class="team-history__years">03/2026 – н.в.</span>
-
-                                <!--
-                                    2nd A-Tier Europe MENA League 2026 - Kickoff
-                                -->
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </details>
+
+            <details class="expandable-card">
+                <summary>
+                    <span class="summary-text">Достижения</span>
+                    <span class="chevron">
+                        <img src="images/icons/arrow_down_24dp.svg" alt="">
+                    </span>
+                </summary>
+
+                <div class="body">
+                    <div class="body-inner">
+                        <div class="body-content">
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">Hexagone Six 2024</span>
+                                    <span class="event-history__tier">C-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">R6 South Breach 2024</span>
+                                    <span class="event-history__tier">B-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">Malta Cyber Series: VIII</span>
+                                    <span class="event-history__tier">B-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">7th</span>
+                                    <span class="event-history__name">Europe League 2024 - Stage 1</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">8th</span>
+                                    <span class="event-history__name">Europe League 2024 - Stage 2</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">5th</span>
+                                    <span class="event-history__name">Europe MENA League 2025 - Stage 1</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">13th-16th</span>
+                                    <span class="event-history__name">Esports World Cup 2025</span>
+                                    <span class="event-history__tier">S-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">5th</span>
+                                    <span class="event-history__name">Europe MENA League 2025 - Stage 2</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">5th</span>
+                                    <span class="event-history__name">Europe MENA League 2025 - Regional Finals</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">2nd</span>
+                                    <span class="event-history__name">Europe MENA League 2026 - Kickoff</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
 
             <div class="player-card__footer">
                 <a href="https://liquipedia.net/rainbowsix/SkyZs" class="social-link" aria-label="Liquipedia"
                    target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-liquipedia.svg');"
-                              aria-hidden="true"></span>
+                    <span class="social-icon" style="--icon: url('/images/links/logo-liquipedia.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://twitter.com/SkyZsR6" class="social-link" aria-label="X" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-x.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://twitter.com/SkyZsR6" class="social-link" aria-label="X"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-x.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://www.twitch.tv/skyzsr6" class="social-link" aria-label="Twitch" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-twitch.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://www.twitch.tv/skyzsr6" class="social-link" aria-label="Twitch"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-twitch.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://siege.gg/players/skyzs" class="social-link" aria-label="SiegeGG" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-siege-gg.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://siege.gg/players/skyzs" class="social-link" aria-label="SiegeGG"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-siege-gg.svg');"
+                          aria-hidden="true"></span>
                 </a>
             </div>
         </div>
@@ -336,9 +447,9 @@
                 <div class="player-card__meta">
                     <span>24 года</span>
                     <span class="country">
-                            <span>🇷🇺</span>
-                            Россия
-                        </span>
+                        <span>🇷🇺</span>
+                        Россия
+                    </span>
                 </div>
             </div>
 
@@ -353,121 +464,165 @@
 
             <!-- EMBED HIGHLIGHT -->
 
-            <div class="player-card__details">
-                <section class="expandable">
-                    <button class="expandable__trigger" type="button">
-                        <span class="expandable__title">Команды</span>
-                        <span class="expandable__action">
-                                <span>Скрыть</span>
-                                <span class="expandable__icon">⌃</span>
-                            </span>
-                    </button>
+            <details class="expandable-card">
+                <summary>
+                    <span class="summary-text">История команд</span>
+                    <span class="chevron">
+                        <img src="images/icons/arrow_down_24dp.svg" alt="">
+                    </span>
+                </summary>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
+                <div class="body">
+                    <div class="body-inner">
+                        <div class="body-content">
                             <div class="team-history">
                                 <span class="team-history__name">AF</span>
                                 <span class="team-history__years">12/2020 – 10/2022</span>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Dunlimited</span>
                                 <span class="team-history__years">10/2022 – 10/2023</span>
-                                <!--
-                                    1st B-Tier European Challenger League 2022
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Dunlimited</span>
                                 <span class="team-history__years">03/2024 – 09/2024</span>
-                                <!--
-                                    1st C-Tier VIBRANT League - Season 2
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">ITB Ac</span>
                                 <span class="team-history__years">09/2024 – 11/2024</span>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Ex-ITB Academy</span>
                                 <span class="team-history__years">11/2024 – 02/2025</span>
-                                <!--
-                                    1st B-Tier R6 South Breach 2024: November
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Geekay Esports</span>
                                 <span class="team-history__years">03/2025 – 03/2026</span>
-                                <!--
-                                    1st B-Tier R6 Central Combine 2025
-                                    1st B-Tier R6 North Rainbow Rumble 2025 - August
-                                    1st B-Tier R6 South Breach 2025
-                                    1st B-Tier Saudi eLeague 2025 - Major 2
-                                    2nd B-Tier Saudi eLeague 2025 - Major 1
-                                    2nd B-Tier Saudi eLeague 2025 - Championship
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Virtus.pro</span>
                                 <span class="team-history__years">03/2026 – н.в.</span>
-                                <!--
-                                    2nd A-Tier Europe MENA League 2026 - Kickoff
-                                -->
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </details>
+
+            <details class="expandable-card">
+                <summary>
+                    <span class="summary-text">Достижения</span>
+                    <span class="chevron">
+                        <img src="images/icons/arrow_down_24dp.svg" alt="">
+                    </span>
+                </summary>
+
+                <div class="body">
+                    <div class="body-inner">
+                        <div class="body-content">
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">European Challenger League 2022</span>
+                                    <span class="event-history__tier">B-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">VIBRANT League - Season 2</span>
+                                    <span class="event-history__tier">C-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">R6 South Breach 2024: November</span>
+                                    <span class="event-history__tier">B-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">R6 Central Combine 2025</span>
+                                    <span class="event-history__tier">B-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">R6 North Rainbow Rumble 2025 - August</span>
+                                    <span class="event-history__tier">B-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">R6 South Breach 2025</span>
+                                    <span class="event-history__tier">B-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">Saudi eLeague 2025 - Major 2</span>
+                                    <span class="event-history__tier">B-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">2nd</span>
+                                    <span class="event-history__name">Saudi eLeague 2025 - Major 1</span>
+                                    <span class="event-history__tier">B-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">2nd</span>
+                                    <span class="event-history__name">Saudi eLeague 2025 - Championship</span>
+                                    <span class="event-history__tier">B-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">2nd</span>
+                                    <span class="event-history__name">Europe MENA League 2026 - Kickoff</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
 
             <div class="player-card__footer">
                 <a href="https://liquipedia.net/rainbowsix/RORICK" class="social-link" aria-label="Liquipedia"
                    target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-liquipedia.svg');"
-                              aria-hidden="true"></span>
+                    <span class="social-icon" style="--icon: url('/images/links/logo-liquipedia.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://twitter.com/rorick_r6" class="social-link" aria-label="X" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-x.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://twitter.com/rorick_r6" class="social-link" aria-label="X"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-x.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://www.twitch.tv/rorick_r6" class="social-link" aria-label="Twitch" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-twitch.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://www.twitch.tv/rorick_r6" class="social-link" aria-label="Twitch"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-twitch.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://siege.gg/players/rorick" class="social-link" aria-label="SiegeGG" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-siege-gg.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://siege.gg/players/rorick" class="social-link" aria-label="SiegeGG"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-siege-gg.svg');"
+                          aria-hidden="true"></span>
                 </a>
             </div>
         </div>
@@ -491,9 +646,9 @@
                 <div class="player-card__meta">
                     <span>25 лет</span>
                     <span class="country">
-                            <span>🇷🇺</span>
-                            Россия
-                        </span>
+                        <span>🇷🇺</span>
+                        Россия
+                    </span>
                 </div>
             </div>
 
@@ -507,90 +662,164 @@
 
             <!-- EMBED HIGHLIGHT -->
 
-            <div class="player-card__details">
-                <section class="expandable">
-                    <button class="expandable__trigger" type="button">
-                        <span class="expandable__title">Команды</span>
-                        <span class="expandable__action">
-                                <span>Скрыть</span>
-                                <span class="expandable__icon">⌃</span>
-                            </span>
-                    </button>
+            <details class="expandable-card">
+                <summary>
+                    <span class="summary-text">История команд</span>
+                    <span class="chevron">
+                        <img src="images/icons/arrow_down_24dp.svg" alt="">
+                    </span>
+                </summary>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
+                <div class="body">
+                    <div class="body-inner">
+                        <div class="body-content">
                             <div class="team-history">
                                 <span class="team-history__name">Team BOOST</span>
                                 <span class="team-history__years">2018 – 2019</span>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">forZe</span>
                                 <span class="team-history__years">03/2019 – 04/2019</span>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Team Empire</span>
                                 <span class="team-history__years">04/2019 – 03/2022</span>
-                                <!--
-                                    SiegeGG Rookie of Year 4
-                                    SiegeGG #3 Player of Year 4
-                                    MVP Pro League Season 9 Finals
-                                    EVP Six Major Raleigh 2019
-                                    MVP Six November 2020 Major - Europe
-                                    Quarter Finals MVP Six Mexico Major 2021
-                                    MVP Of Day 2 Six Invitational 2022
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Virtus.pro</span>
                                 <span class="team-history__years">09/2022 – н.в.</span>
-                                <!--
-                                    1st A-Tier Europe League 2023 - Stage 2
-                                    1st A-Tier Europe League 2023 - Stage 1
-                                    3rd S-Tier Six Invitational 2024
-                                    3rd-4th S-Tier BLAST R6 Major Montreal 2024
-                                    3rd A-Tier Europe League 2024 - Stage 2
-                                -->
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </details>
+
+            <details class="expandable-card">
+                <summary>
+                    <span class="summary-text">Достижения</span>
+                    <span class="chevron">
+                        <img src="images/icons/arrow_down_24dp.svg" alt="">
+                    </span>
+                </summary>
+
+                <div class="body">
+                    <div class="body-inner">
+                        <div class="body-content">
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place"></span>
+                                    <span class="event-history__name">SiegeGG Rookie of Year 4</span>
+                                    <span class="event-history__tier"></span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place"></span>
+                                    <span class="event-history__name">SiegeGG #3 Player of Year 4</span>
+                                    <span class="event-history__tier"></span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place"></span>
+                                    <span class="event-history__name">MVP Pro League Season 9 Finals</span>
+                                    <span class="event-history__tier"></span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place"></span>
+                                    <span class="event-history__name">EVP Six Major Raleigh 2019</span>
+                                    <span class="event-history__tier"></span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place"></span>
+                                    <span class="event-history__name">MVP Six November 2020 Major - Europe</span>
+                                    <span class="event-history__tier"></span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place"></span>
+                                    <span class="event-history__name">Quarter Finals MVP Six Mexico Major 2021</span>
+                                    <span class="event-history__tier"></span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place"></span>
+                                    <span class="event-history__name">MVP Of Day 2 Six Invitational 2022</span>
+                                    <span class="event-history__tier"></span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">Europe League 2023 - Stage 2</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">Europe League 2023 - Stage 1</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">3rd</span>
+                                    <span class="event-history__name">Six Invitational 2024</span>
+                                    <span class="event-history__tier">S-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">3rd-4th</span>
+                                    <span class="event-history__name">BLAST R6 Major Montreal 2024</span>
+                                    <span class="event-history__tier">S-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">3rd</span>
+                                    <span class="event-history__name">Europe League 2024 - Stage 2</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
 
             <div class="player-card__footer">
                 <a href="https://liquipedia.net/rainbowsix/dan" class="social-link" aria-label="Liquipedia"
                    target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-liquipedia.svg');"
-                              aria-hidden="true"></span>
+                    <span class="social-icon" style="--icon: url('/images/links/logo-liquipedia.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://twitter.com/Dan_R6" class="social-link" aria-label="X" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-x.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://twitter.com/Dan_R6" class="social-link" aria-label="X"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-x.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://www.twitch.tv/dannr6" class="social-link" aria-label="Twitch" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-twitch.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://www.twitch.tv/dannr6" class="social-link" aria-label="Twitch"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-twitch.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://siege.gg/players/358" class="social-link" aria-label="SiegeGG" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-siege-gg.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://siege.gg/players/358" class="social-link" aria-label="SiegeGG"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-siege-gg.svg');"
+                          aria-hidden="true"></span>
                 </a>
             </div>
         </div>
@@ -614,9 +843,9 @@
                 <div class="player-card__meta">
                     <span>25 лет</span>
                     <span class="country">
-                            <span>🇷🇺</span>
-                            Россия
-                        </span>
+                        <span>🇷🇺</span>
+                        Россия
+                    </span>
                 </div>
             </div>
 
@@ -630,108 +859,135 @@
 
             <!-- EMBED HIGHLIGHT -->
 
-            <div class="player-card__details">
-                <section class="expandable">
-                    <button class="expandable__trigger" type="button">
-                        <span class="expandable__title">Команды</span>
-                        <span class="expandable__action">
-                                <span>Скрыть</span>
-                                <span class="expandable__icon">⌃</span>
-                            </span>
-                    </button>
+            <details class="expandable-card">
+                <summary>
+                    <span class="summary-text">История команд</span>
+                    <span class="chevron">
+                        <img src="images/icons/arrow_down_24dp.svg" alt="">
+                    </span>
+                </summary>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
+                <div class="body">
+                    <div class="body-inner">
+                        <div class="body-content">
                             <div class="team-history">
                                 <span class="team-history__name">myR</span>
                                 <span class="team-history__years">05/2018 – 06/2018</span>
-                                <span class="team-history__role">ЗАПАСНОЙ ИГРОК</span>
+                                <span class="team-history__role">Запасной игрок</span>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">notSoon</span>
                                 <span class="team-history__years">06/2018 – 06/2018</span>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">OXYGEN</span>
                                 <span class="team-history__years">06/2018 – 11/2018</span>
                                 <span class="team-history__role">Тренер</span>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">forZe</span>
                                 <span class="team-history__years">11/2018 – 07/2019</span>
                                 <span class="team-history__role">Тренер</span>
-                                <!--
-                                    3rd-4th S-Tier Six Major Raleigh 2019
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">forZe</span>
                                 <span class="team-history__years">07/2019 – 05/2020</span>
-                                <!--
-                                    3rd-4th S-Tier Six Major Raleigh 2019
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Virtus.pro</span>
                                 <span class="team-history__years">05/2020 – н.в.</span>
-                                <!--
-                                    1st A-Tier Europe League 2023 - Stage 2
-                                    1st A-Tier Europe League 2023 - Stage 1
-                                    3rd S-Tier Six Invitational 2024
-                                    3rd-4th S-Tier BLAST R6 Major Montreal 2024
-                                    3rd A-Tier Europe League 2024 - Stage 2
-                                -->
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </details>
+
+            <details class="expandable-card">
+                <summary>
+                    <span class="summary-text">Достижения</span>
+                    <span class="chevron">
+                        <img src="images/icons/arrow_down_24dp.svg" alt="">
+                    </span>
+                </summary>
+
+                <div class="body">
+                    <div class="body-inner">
+                        <div class="body-content">
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">3rd-4th</span>
+                                    <span class="event-history__name">Six Major Raleigh 2019</span>
+                                    <span class="event-history__tier">S-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">Europe League 2023 - Stage 2</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">Europe League 2023 - Stage 1</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">3rd</span>
+                                    <span class="event-history__name">Six Invitational 2024</span>
+                                    <span class="event-history__tier">S-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">3rd-4th</span>
+                                    <span class="event-history__name">BLAST R6 Major Montreal 2024</span>
+                                    <span class="event-history__tier">S-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">3rd</span>
+                                    <span class="event-history__name">Europe League 2024 - Stage 2</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
 
             <div class="player-card__footer">
                 <a href="https://liquipedia.net/rainbowsix/p4sh4" class="social-link" aria-label="Liquipedia"
                    target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-liquipedia.svg');"
-                              aria-hidden="true"></span>
+                    <span class="social-icon" style="--icon: url('/images/links/logo-liquipedia.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://twitter.com/p4sh4_" class="social-link" aria-label="X" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-x.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://twitter.com/p4sh4_" class="social-link" aria-label="X"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-x.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://www.twitch.tv/p4sh4_" class="social-link" aria-label="Twitch" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-twitch.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://www.twitch.tv/p4sh4_" class="social-link" aria-label="Twitch"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-twitch.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://siege.gg/players/534" class="social-link" aria-label="SiegeGG" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-siege-gg.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://siege.gg/players/534" class="social-link" aria-label="SiegeGG"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-siege-gg.svg');"
+                          aria-hidden="true"></span>
                 </a>
             </div>
         </div>
@@ -755,9 +1011,9 @@
                 <div class="player-card__meta">
                     <span>24 года</span>
                     <span class="country">
-                            <span>🇧🇷</span>
-                            Бразилия
-                        </span>
+                        <span>🇧🇷</span>
+                        Бразилия
+                    </span>
                 </div>
             </div>
 
@@ -775,147 +1031,186 @@
 
             <!-- EMBED HIGHLIGHT -->
 
-            <div class="player-card__details">
-                <section class="expandable">
-                    <button class="expandable__trigger" type="button">
-                        <span class="expandable__title">Команды</span>
-                        <span class="expandable__action">
-                                <span>Скрыть</span>
-                                <span class="expandable__icon">⌃</span>
-                            </span>
-                    </button>
+            <details class="expandable-card">
+                <summary>
+                    <span class="summary-text">История команд</span>
+                    <span class="chevron">
+                        <img src="images/icons/arrow_down_24dp.svg" alt="">
+                    </span>
+                </summary>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
+                <div class="body">
+                    <div class="body-inner">
+                        <div class="body-content">
                             <div class="team-history">
                                 <span class="team-history__name">ZooM9 E-sports</span>
                                 <span class="team-history__years">11/2019 – 03/2020</span>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">ReD DevilS</span>
                                 <span class="team-history__years">04/2020 – 07/2020</span>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">TM E-SPORTS</span>
                                 <span class="team-history__years">10/2020 – 02/2021</span>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Looking For Org</span>
                                 <span class="team-history__years">02/2021 – 04/2021</span>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Vegas Scorpions</span>
                                 <span class="team-history__years">04/2021 – 05/2021</span>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">9z Team</span>
                                 <span class="team-history__years">06/2021 – 09/2021</span>
                                 <span class="team-history__role">Аналитик</span>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">FaZe Clan</span>
                                 <span class="team-history__years">09/2021 – 05/2022</span>
                                 <span class="team-history__role">Аналитик</span>
-                                <!--
-                                    1st S-Tier Six Sweden Major 2021
-                                    1st A-Tier Copa Elite Six - Season 2021: Stage 3
-                                    3rd S-Tier Six Invitational 2022
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">MIBR</span>
                                 <span class="team-history__years">05/2022 – 11/2023</span>
                                 <span class="team-history__role">Тренер</span>
-                                <!--
-                                    7th-8th S-Tier Gamers8 2022
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">FEARX</span>
                                 <span class="team-history__years">11/2023 – 03/2026</span>
                                 <span class="team-history__role">Тренер</span>
-                                <!--
-                                    2nd A-Tier South Korea League 2024 - Stage 1
-                                    3rd A-Tier South Korea League 2024 - Stage 2
-                                    13th-16th S-Tier Six Invitational 2024
-                                    5th-8th S-Tier RE:L0:AD 2025
-                                    1st A-Tier Asia Pacific League 2025 - APAC North - Stage 1
-                                    3rd A-Tier Asia Pacific League 2025 - Regional Finals
-                                -->
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="expandable__content-wrapper">
-                        <div class="expandable__content">
                             <div class="team-history">
                                 <span class="team-history__name">Virtus.pro</span>
                                 <span class="team-history__years">03/2026 – н.в.</span>
                                 <span class="team-history__role">Тренер</span>
-                                <!--
-                                    2nd A-Tier Europe MENA League 2026 - Kickoff
-                                -->
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </details>
+
+            <details class="expandable-card">
+                <summary>
+                    <span class="summary-text">Достижения</span>
+                    <span class="chevron">
+                        <img src="images/icons/arrow_down_24dp.svg" alt="">
+                    </span>
+                </summary>
+
+                <div class="body">
+                    <div class="body-inner">
+                        <div class="body-content">
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">Six Sweden Major 2021</span>
+                                    <span class="event-history__tier">S-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">Copa Elite Six - Season 2021: Stage 3</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">3rd</span>
+                                    <span class="event-history__name">Six Invitational 2022</span>
+                                    <span class="event-history__tier">S-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">7th-8th</span>
+                                    <span class="event-history__name">Gamers8 2022</span>
+                                    <span class="event-history__tier">S-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">2nd</span>
+                                    <span class="event-history__name">South Korea League 2024 - Stage 1</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">3rd</span>
+                                    <span class="event-history__name">South Korea League 2024 - Stage 2</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">13th-16th</span>
+                                    <span class="event-history__name">Six Invitational 2024</span>
+                                    <span class="event-history__tier">S-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">5th-8th</span>
+                                    <span class="event-history__name">RE:L0:AD 2025</span>
+                                    <span class="event-history__tier">S-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">1st</span>
+                                    <span class="event-history__name">Asia Pacific League 2025 - APAC North - Stage 1</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">3rd</span>
+                                    <span class="event-history__name">Asia Pacific League 2025 - Regional Finals</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                            <div class="event-history-list">
+                                <div class="event-history">
+                                    <span class="event-history__place">2nd</span>
+                                    <span class="event-history__name">Europe MENA League 2026 - Kickoff</span>
+                                    <span class="event-history__tier">A-Tier</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
 
             <div class="player-card__footer">
                 <a href="https://liquipedia.net/rainbowsix/Dark" class="social-link" aria-label="Liquipedia"
                    target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-liquipedia.svg');"
-                              aria-hidden="true"></span>
+                    <span class="social-icon" style="--icon: url('/images/links/logo-liquipedia.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://twitter.com/Dxrk_R6" class="social-link" aria-label="X" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-x.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://twitter.com/Dxrk_R6" class="social-link" aria-label="X"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-x.svg');"
+                          aria-hidden="true"></span>
                 </a>
 
-                <a href="https://www.twitch.tv/dxrk_r6" class="social-link" aria-label="Twitch" target="_blank">
-                        <span class="social-icon" style="--icon: url('/images/links/logo-twitch.svg');"
-                              aria-hidden="true"></span>
+                <a href="https://www.twitch.tv/dxrk_r6" class="social-link" aria-label="Twitch"
+                   target="_blank">
+                    <span class="social-icon" style="--icon: url('/images/links/logo-twitch.svg');"
+                          aria-hidden="true"></span>
                 </a>
             </div>
         </div>

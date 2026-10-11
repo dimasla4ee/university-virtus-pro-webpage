@@ -6,6 +6,9 @@
     --color-text-muted: #a0a0a0;
     --color-primary: #1936df;
     --color-secondary: #f97316;
+
+    --body-medium: 16px;
+    --label-large: 14px;
 }
 
 @font-face {

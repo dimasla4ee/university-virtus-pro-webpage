@@ -6,7 +6,7 @@
     border-width: 1px;
     border-color: var(--color-roster);
     border-style: solid;
-    width: 70%;
+    width: 94%;
     margin: 0 auto 30px;
     flex-shrink: 0;
 }
@@ -39,7 +39,7 @@
     margin: 16px;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 14;
+    font-size: 14px;
 }
 
 .player-card__identity {
@@ -61,7 +61,7 @@ p.eyebrow {
 }
 
 .player-card__identity h2 {
-    font-family: BarlowCondensed;
+    font-family: BarlowCondensed, sans-serif;
     font-size: 55px;
     font-style: italic;
     text-transform: uppercase;
@@ -102,82 +102,9 @@ p.eyebrow {
     padding: 10px;
 }
 
-.expandable {
-    width: 100%;
-    border-bottom: 1px solid #303033;
-}
-
-.expandable__trigger {
-    width: 100%;
-    min-height: 110px;
-    padding: 26px 0;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-
-    border: 0;
-    background: none;
-    color: #f1f1f1;
-
-    font: inherit;
-    text-align: left;
-    cursor: pointer;
-}
-
-.expandable__title {
-    font-family: BarlowCondensed, sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.expandable__action {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-
-    color: #999;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.expandable__icon {
-    display: inline-block;
-    font-size: 20px;
-    line-height: 1;
-    transition: transform 0.3s ease;
-}
-
-/* Анимируем высоту контента */
-.expandable__content-wrapper {
-    display: grid;
-    grid-template-rows: 1fr;
-    transition: grid-template-rows 0.35s ease;
-}
-
-.expandable--closed .expandable__content-wrapper {
-    grid-template-rows: 0fr;
-}
-
-.expandable__content {
-    min-height: 0;
-    overflow: hidden;
-    padding-bottom: 26px;
-}
-
-.expandable--closed .expandable__content {
-    padding-bottom: 0;
-}
-
-.expandable--closed .expandable__icon {
-    transform: rotate(180deg);
-}
-
 .team-history {
     display: grid;
     grid-template-columns: 1fr auto;
-    row-gap: 6px;
     margin-bottom: 26px;
 }
 
@@ -186,8 +113,8 @@ p.eyebrow {
 }
 
 .team-history__name {
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .team-history__years {
@@ -196,10 +123,130 @@ p.eyebrow {
     align-self: center;
 
     color: #999;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .team-history__role {
     color: #999;
-    font-size: 20px;
+    font-size: 14px;
+}
+
+.expandable-card {
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    border-bottom: 1px solid #303033;
+    margin-bottom: 20px;
+}
+
+.expandable-card summary {
+    display: flex;
+    padding: 20px 0;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.summary-text {
+    font-size: 18px;
+    color: #f1f5f9;
+}
+
+.expandable-card summary .chevron {
+    margin-left: auto;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.expandable-card[open] summary .chevron {
+    transform: rotate(180deg);
+}
+
+.expandable-card .body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expandable-card[open] .body {
+    grid-template-rows: 1fr;
+}
+
+.expandable-card .body-inner {
+    overflow: hidden;
+}
+
+.expandable-card .body-content {
+    padding: 0 0 24px 0;
+    color: #ffffff;
+}
+
+.social-icon {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: currentColor;
+    -webkit-mask: var(--icon) center / contain no-repeat;
+    mask: var(--icon) center / contain no-repeat;
+}
+
+.event-history-list {
+    background-color: #111214;
+    padding: 16px 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.event-history {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 16px;
+
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    transition: background-color 0.15s ease;
+}
+
+.event-history:hover {
+    background-color: #18191c;
+}
+
+.event-history:last-child {
+    margin-bottom: 0;
+}
+
+.event-history__place {
+    color: #f96b34;
+    font-size: 15px;
+    font-weight: 800;
+    min-width: 32px;
+}
+
+.event-history__name {
+    color: #f4f4f5;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.event-history__tier {
+    grid-column: 3;
+    align-self: center;
+    color: #63636e;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: right;
 }

@@ -1,16 +1,26 @@
 /**
- *
+ * Список всех элементов с заданным классом `nav-link`.
+ * @type {NodeListOf<Element>}
  */
-function scrollToPlayer(id) {
-    document.getElementById(id).scrollIntoView({
-        behavior: 'smooth'
-    });
-}
-
 const links = document.querySelectorAll(".nav-link");
+
+/**
+ * Список всех секций `section` с заданным `id`.
+ * @type {NodeListOf<Element>}
+ */
 const sections = document.querySelectorAll("section[id]");
 
-const observer = new IntersectionObserver(
+/**
+ * Наблюдатель, реализующий механизм подсветки элементов навигации
+ * в зависимости от просматриваемой части страницы (scroll-spy).
+ *
+ * Когда секция попадает в определённую зону видимости:
+ * - у всех ссылок `nav-link` удаляется класс `active`;
+ * - определяется ссылка, ведущая на эту секцию, и обновляется на `active`;
+ * - адресная строка обновляется без перезагрузки и добавления новой записи в историю.
+ * @type {IntersectionObserver}
+ */
+const scrollSpyObserver = new IntersectionObserver(
     (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -28,48 +38,39 @@ const observer = new IntersectionObserver(
         });
     },
     {
+        // Смещение области пересечения в центр зоны видимости
         rootMargin: "-40% 0px -55% 0px",
         threshold: 0
     }
 );
+sections.forEach(section => scrollSpyObserver.observe(section));
 
-sections.forEach(section => observer.observe(section));
+document.querySelectorAll('.expandable-card').forEach(details => {
+    const summary = details.querySelector('summary');
+    const body = details.querySelector('.body');
+    let isClosing = false;
 
-document.querySelectorAll(".team-header").forEach(header => {
-    header.addEventListener("click", () => {
-        const card = header.closest(".team-card");
-        const isOpen = card.classList.toggle("active");
+    summary.addEventListener('click', e => {
+        if (!details.open || isClosing) return;
 
-        header.setAttribute("aria-expanded", isOpen);
+        e.preventDefault();
+        isClosing = true;
+        body.style.gridTemplateRows = '0fr';
+
+        body.addEventListener('transitionend', () => {
+            details.open = false;
+            body.style.gridTemplateRows = '';
+            isClosing = false;
+        }, {once: true});
     });
 });
 
-document.querySelectorAll(".team-card").forEach(card => {
-    if (!card.classList.contains("active")) {
-        const body = card.querySelector(".team-body");
-
-        if (body) {
-            body.hidden = true;
-        }
-    }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.expandable').forEach(expandable => {
-        const trigger = expandable.querySelector('.expandable__trigger');
-        const actionText = expandable.querySelector('.expandable__action span:first-child');
-
-        const setOpen = (isOpen) => {
-            expandable.classList.toggle('expandable--closed', !isOpen);
-            trigger.setAttribute('aria-expanded', String(isOpen));
-            actionText.textContent = isOpen ? 'Скрыть' : 'Показать';
-        };
-
-        setOpen(false);
-
-        trigger.addEventListener('click', () => {
-            const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-            setOpen(!isOpen);
-        });
-    });
-});
+/**
+ * Находит элемент по `id` и плавно прокручивает страницу так,
+ * чтобы выбранный элемент оказался вверху области просмотра.
+ */
+function scrollToElement(id) {
+    document.getElementById(id).scrollIntoView(
+        {behavior: 'smooth'}
+    );
+}
