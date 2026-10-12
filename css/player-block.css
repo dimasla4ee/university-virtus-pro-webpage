@@ -15,15 +15,25 @@
     position: absolute;
     inset: 0;
     width: 30%;
-    background-color: rgb(16, 21, 96);
     display: flex;
     flex-direction: column-reverse;
 }
 
 .player-card__visual img {
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
     height: 100%;
+
+    -webkit-mask-image: linear-gradient(
+            to right,
+            black 70%,
+            transparent 100%
+    );
+    mask-image: linear-gradient(
+            to right,
+            black 70%,
+            transparent 100%
+    );
 }
 
 .player-card__body {
@@ -39,7 +49,7 @@
     margin: 16px;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 14px;
+    font-size: var(--label-large);
 }
 
 .player-card__identity {
@@ -113,7 +123,7 @@ p.eyebrow {
 }
 
 .team-history__name {
-    font-size: 14px;
+    font-size: var(--label-large);
     font-weight: 600;
 }
 
@@ -121,14 +131,13 @@ p.eyebrow {
     grid-column: 2;
     grid-row: 1 / 3;
     align-self: center;
-
     color: #999;
-    font-size: 14px;
+    font-size: var(--label-large);
 }
 
 .team-history__role {
     color: #999;
-    font-size: 14px;
+    font-size: var(--label-large);
 }
 
 .expandable-card {
@@ -198,28 +207,12 @@ p.eyebrow {
     mask: var(--icon) center / contain no-repeat;
 }
 
-.event-history-list {
-    background-color: #111214;
-    padding: 16px 20px;
-    border-radius: 8px;
-    max-width: 600px;
-    font-family: system-ui, -apple-system, sans-serif;
-}
-
 .event-history {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 16px;
-
-    padding: 10px 12px;
-    margin-bottom: 8px;
-    border-radius: 6px;
+    margin-bottom: 26px;
+    gap: 12px;
     transition: background-color 0.15s ease;
-}
-
-.event-history:hover {
-    background-color: #18191c;
 }
 
 .event-history:last-child {
@@ -228,15 +221,14 @@ p.eyebrow {
 
 .event-history__place {
     color: #f96b34;
-    font-size: 15px;
-    font-weight: 800;
+    font-size: var(--label-large);
     min-width: 32px;
 }
 
 .event-history__name {
     color: #f4f4f5;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: var(--label-large);
+    font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -246,7 +238,6 @@ p.eyebrow {
     grid-column: 3;
     align-self: center;
     color: #63636e;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: var(--label-large);
     text-align: right;
 }
