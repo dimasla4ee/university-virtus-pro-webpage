@@ -1,63 +1,115 @@
 .player-card {
     display: flex;
     flex-direction: row;
-    position: relative;
     align-items: flex-start;
-    border-width: 1px;
-    border-color: var(--color-roster);
-    border-style: solid;
-    width: 94%;
+    position: relative;
+    border: 1px solid var(--color-roster);
+    width: 1000px;
+    max-width: 94%;
     margin: 0 auto 30px;
     flex-shrink: 0;
 }
 
+.player-card__portrait {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+}
+
+.player-card__portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .player-card__visual {
-    position: absolute;
-    inset: 0;
-    width: 30%;
-    display: flex;
-    flex-direction: column-reverse;
+    position: relative;
+    flex: 0 0 30%;
+    min-width: 0;
+    align-self: stretch;
+    isolation: isolate;
 }
 
 .player-card__visual img {
-    object-fit: cover;
+    display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
+    object-fit: contain;
 
     -webkit-mask-image: linear-gradient(
             to right,
-            black 70%,
+            black 80%,
             transparent 100%
     );
     mask-image: linear-gradient(
             to right,
-            black 70%,
+            black 80%,
             transparent 100%
     );
 }
 
+.player-card__visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    height: 70%;
+
+    background: radial-gradient(
+            ellipse at 25% 20%,
+            rgb(255 90 54 / 0.16) 0%,
+            rgb(255 90 54 / 0.09) 35%,
+            transparent 75%
+    );
+
+    transition: opacity 0.4s ease;
+}
+
 .player-card__body {
+    flex: 1;
+    min-width: 0;
     padding: 26px;
-    margin-left: 30%;
+    box-sizing: border-box;
 }
 
 .player-card__role {
     position: absolute;
+    line-height: 24px;
+    left: 16px;
+    bottom: 16px;
+    width: 60%;
+    padding-left: 8px;
+    margin: 0;
     border-style: none none none solid;
     border-color: var(--color-secondary);
-    padding-left: 16px;
-    margin: 16px;
+    background-color: black;
+
     text-transform: uppercase;
     font-weight: bold;
     font-size: var(--label-large);
+
+    -webkit-mask-image: linear-gradient(
+            to right,
+            black 40%,
+            transparent 100%
+    );
+    mask-image: linear-gradient(
+            to right,
+            black 40%,
+            transparent 100%
+    );
 }
 
 .player-card__identity {
-    width: 100%;
-    line-height: 1;
-    height: auto;
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    line-height: 1;
 }
 
 p.eyebrow {
@@ -78,12 +130,11 @@ p.eyebrow {
 }
 
 .player-card__meta {
-    height: fit-content;
-    font-size: 13px;
-    font-weight: 700;
-    text-align: right;
     display: flex;
     flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
 }
 
 .player-card__footer {
@@ -142,7 +193,6 @@ p.eyebrow {
 
 .expandable-card {
     width: 100%;
-    max-width: 500px;
     overflow: hidden;
     transition: border-color 0.3s, box-shadow 0.3s;
     border-bottom: 1px solid #303033;
