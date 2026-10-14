@@ -90,6 +90,5 @@ section {
     font-size: clamp(36px, 6vw, 96px);
     font-weight: 700;
     line-height: 1.05;
-    letter-spacing: 0.04em;
     text-transform: uppercase;
 }

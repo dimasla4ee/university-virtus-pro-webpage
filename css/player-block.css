@@ -69,8 +69,19 @@
 .player-card__body {
     flex: 1;
     min-width: 0;
-    padding: 26px;
+    padding: 0 16px 24px 24px;
     box-sizing: border-box;
+}
+
+.player-card__body p {
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+.player-card__body iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9
 }
 
 .player-card__role {
